@@ -9,5 +9,5 @@ Shop
 
 3. then wait for the project to build until run button on android will show
 
-4. Run
+4. Run on emulator
 
