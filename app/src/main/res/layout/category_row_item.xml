@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="productcategory"
+            type="com.mesada.shop.model.ProductCategory" />
+
+        <variable
+            name="categoryInterface"
+            type="com.mesada.shop.adapter.ProductCategoryAdapter.CategoryInterface" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:background="#ffffff"
+        android:onClick="@{() -> categoryInterface.onItemClick(productcategory)}">
+
+    <TextView
+        android:id="@+id/cat_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="12dp"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="@{productcategory.productCategory}"
+        android:textColor="#373131"
+        android:textSize="12sp"
+        android:background="@drawable/category"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="cartItem"
+            type="com.mesada.shop.model.Cart" />
+
+    </data>
+
+<RelativeLayout
+    android:id="@+id/cart_background"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:padding="20dp"
+    android:background="@drawable/cart_border">
+
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Flash T-shirt"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/prod_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tee"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/productTotalPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="@{String.valueOf(cartItem.product.price)}"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/productQuantityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:text="@{String.valueOf(cartItem.quantity) + `x`}" />
+
+    <LinearLayout
+        android:id="@+id/deleteProductButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="0dp"
+        android:background="@drawable/circle_close"
+        app:layout_constraintHorizontal_bias="1.5">
+
+        <TextView
+            android:id="@+id/remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="x"
+            android:textColor="#000000"
+            android:textSize="12sp"/>
+    </LinearLayout>
+</RelativeLayout>
+
+</layout>

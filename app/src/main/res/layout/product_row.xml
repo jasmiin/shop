@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="product"
+            type="com.mesada.shop.model.Product" />
+
+        <variable
+            name="shopInterface"
+            type="com.mesada.shop.adapter.ProductAdapter.ShopInterface" />
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:id="@+id/image_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/productImageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            android:src="@drawable/p_1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/availableTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/image_background"
+        android:text="@{product.category}"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@{product.name}"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_dark"
+        android:textSize="12sp"
+        android:layout_toRightOf="@id/image_background" />
+
+    <TextView
+        android:id="@+id/prod_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:text="@{`$ `+ String.valueOf(product.price)}"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_toRightOf="@id/image_background"/>
+
+    <LinearLayout
+        android:id="@+id/addToCartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
+        android:onClick="@{() -> shopInterface.addItem(product)}"
+        android:background="@drawable/leftround_corner">
+
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Add"
+            android:onClick="@{() -> shopInterface.addItem(product)}"
+            android:textColor="@android:color/background_dark"
+            android:textSize="16sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/plus_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="23dp"
+        android:onClick="@{() -> shopInterface.addItem(product)}"
+        android:background="@drawable/rightround_corner">
+
+        <TextView
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="+"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</RelativeLayout>
+</layout>
