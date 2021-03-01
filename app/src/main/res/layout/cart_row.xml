@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Flash T-shirt"
+        android:text="@{String.valueOf(cartItem.product.name)}"
         android:textColor="@android:color/background_dark"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -32,7 +32,7 @@
         android:id="@+id/prod_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tee"
+        android:text="@{String.valueOf(cartItem.product.category)}"
         android:layout_marginTop="30dp"
         android:textColor="@android:color/background_dark"
         android:textSize="15sp"
